@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd">
+
+    <bean id="emailService" class="com.primerproyectospring.EmailService">
+        <!-- autowire="byType"> Inyección automática -->
+        <!-- autowire="byName">  Inyección automática -->
+        <!-- autowire="constructor">  Inyección automática -->
+        <property name="saludator" ref="saludator" /> <!-- Vía Setter/Explícita -->
+        <!-- <property name="saludator" ref="englishSaludator"/> -->
+        <!-- Vía Setter/Explícita -->
+    </bean>
+
+    <bean id="saludator" class="com.primerproyectospring.Saludator">
+        <constructor-arg value="Hola Mundillo" /> <!-- Vía Constructor -->
+        <!-- <property name="mensaje" value="Hola Mundillo" /> -->
+        <!-- Vía Setter/Explícita -->
+    </bean>
+
+    <bean id="englishSaludator" class="com.primerproyectospring.Saludator">
+        <constructor-arg value="Hello World Guys" /> <!-- Vía Constructor -->
+        <!-- <property name="mensaje" value="Hello World Guys" /> -->
+        <!-- Vía Setter/Explícita -->
+    </bean>
+
+</beans>
